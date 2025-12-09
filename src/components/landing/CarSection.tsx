@@ -1,8 +1,15 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Gauge, Timer, Zap } from "lucide-react";
+import { Gauge, Timer, Zap, Activity, Users, Package, Disc, Tablet } from "lucide-react";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export function CarSection() {
   return (
@@ -20,21 +27,46 @@ export function CarSection() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                <Timer className="w-6 h-6 mx-auto mb-2 text-red-500" />
-                <p className="text-2xl font-bold text-white">3.7s</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Timer className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">3.7s</p>
                 <p className="text-xs text-slate-500">0-100 km/h</p>
               </div>
-              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                <Gauge className="w-6 h-6 mx-auto mb-2 text-red-500" />
-                <p className="text-2xl font-bold text-white">250</p>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Gauge className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">250</p>
                 <p className="text-xs text-slate-500">km/h Végsebesség</p>
               </div>
-              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800">
-                <Zap className="w-6 h-6 mx-auto mb-2 text-red-500" />
-                <p className="text-2xl font-bold text-white">514</p>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Zap className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">514</p>
                 <p className="text-xs text-slate-500">km Hatótáv (WLTP)</p>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Activity className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">AWD</p>
+                <p className="text-xs text-slate-500">Dual Motor</p>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Users className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">5 Fő</p>
+                <p className="text-xs text-slate-500">Utastér</p>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Package className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">2158 L</p>
+                <p className="text-xs text-slate-500">Csomagtér</p>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Disc className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">21"</p>
+                <p className="text-xs text-slate-500">Überturbine</p>
+              </div>
+              <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
+                <Tablet className="w-6 h-6 mb-2 text-red-500" />
+                <p className="text-xl font-bold text-white">15"</p>
+                <p className="text-xs text-slate-500">Érintőkijelző</p>
               </div>
             </div>
 
@@ -56,14 +88,30 @@ export function CarSection() {
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 lg:col-start-1">
-             {/* Placeholder for Tesla Image */}
-             <div className="w-full h-full bg-slate-950 flex items-center justify-center text-slate-500">
-                <img 
-                  src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2670&auto=format&fit=crop" 
-                  alt="Tesla Model Y" 
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-                />
-             </div>
+            <Carousel className="w-full h-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="w-full h-full relative aspect-[4/3]">
+                    <img 
+                      src="/tesla-main.png" 
+                      alt="Tesla Model Y Main" 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="w-full h-full relative aspect-[4/3]">
+                     <img 
+                      src="/tesla-side.png" 
+                      alt="Tesla Model Y Side View" 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
 
         </div>

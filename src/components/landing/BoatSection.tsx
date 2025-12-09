@@ -1,9 +1,17 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Battery, Zap, Anchor } from "lucide-react";
+import { Check, Battery, Zap, Anchor, ArrowLeftRight, Maximize2, Scale, Users, Bed } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 
 export function BoatSection() {
   return (
@@ -11,14 +19,39 @@ export function BoatSection() {
       <div className="container px-4 mx-auto">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-             {/* Placeholder for Boat Image */}
-             <div className="w-full h-full bg-slate-800 flex items-center justify-center text-slate-500">
-                <img 
-                  src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=2670&auto=format&fit=crop" 
-                  alt="BALT 818 TITANIUM" 
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-                />
-             </div>
+            <Carousel className="w-full h-full">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="w-full h-full relative aspect-[4/3]">
+                    <img 
+                      src="/boat-main.jpg" 
+                      alt="BALT 818 TITANIUM Main" 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="w-full h-full relative aspect-[4/3]">
+                     <img 
+                      src="/boat-side.png" 
+                      alt="BALT 818 TITANIUM Side View" 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </CarouselItem>
+                 <CarouselItem>
+                  <div className="w-full h-full relative aspect-[4/3]">
+                     <img 
+                      src="/boat-interior.png" 
+                      alt="BALT 818 TITANIUM Interior" 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
 
           <div className="space-y-8">
@@ -31,26 +64,92 @@ export function BoatSection() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               <Card className="bg-slate-900/50 border-slate-800">
-                <CardContent className="p-4 flex items-center gap-3">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
                   <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
-                    <Zap className="w-6 h-6" />
+                    <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Motor</p>
-                    <p className="font-semibold text-white">Kraeutler ACA8 10KW</p>
+                    <p className="text-xs text-slate-400">Motor</p>
+                    <p className="font-semibold text-white text-sm">10kW</p>
                   </div>
                 </CardContent>
               </Card>
               <Card className="bg-slate-900/50 border-slate-800">
-                <CardContent className="p-4 flex items-center gap-3">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
                   <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
-                    <Battery className="w-6 h-6" />
+                    <Battery className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Akkumulátor</p>
-                    <p className="font-semibold text-white">20kWh Victron</p>
+                    <p className="text-xs text-slate-400">Akkumulátor</p>
+                    <p className="font-semibold text-white text-sm">20kWh</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-slate-900/50 border-slate-800">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                    <ArrowLeftRight className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400">Hossz</p>
+                    <p className="font-semibold text-white text-sm">8.48m</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-slate-900/50 border-slate-800">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                    <Maximize2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400">Szélesség</p>
+                    <p className="font-semibold text-white text-sm">2.7m</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-slate-900/50 border-slate-800">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                    <Anchor className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400">Merülés</p>
+                    <p className="font-semibold text-white text-sm">0.4-0.6m</p>
+                  </div>
+                </CardContent>
+              </Card>
+               <Card className="bg-slate-900/50 border-slate-800">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                    <Scale className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400">Súly</p>
+                    <p className="font-semibold text-white text-sm">1850kg</p>
+                  </div>
+                </CardContent>
+              </Card>
+               <Card className="bg-slate-900/50 border-slate-800">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400">Férőhely</p>
+                    <p className="font-semibold text-white text-sm">6 Fő</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="bg-slate-900/50 border-slate-800">
+                <CardContent className="p-4 flex flex-col items-center text-center gap-2">
+                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                    <Bed className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400">Fekhely</p>
+                    <p className="font-semibold text-white text-sm">6</p>
                   </div>
                 </CardContent>
               </Card>

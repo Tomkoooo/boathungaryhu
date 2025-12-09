@@ -19,8 +19,16 @@ export function HeroSection() {
       </div>
 
       <div className="container relative z-20 px-4 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-sm font-medium text-blue-300 border border-blue-500/30 rounded-full bg-blue-950/30 backdrop-blur-sm">
-          <Zap className="w-4 h-4" />
+        <div className="flex justify-center mb-6">
+            <img 
+              src="/logo.jpg" 
+              alt="BoatHungary Logo" 
+              className="h-64 md:h-48 w-auto rounded-lg shadow-lg border border-slate-800"
+            />
+        </div>
+
+        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-lg sm:text-xl font-bold text-blue-300 border border-blue-500/30 rounded-full bg-blue-950/30 backdrop-blur-sm">
+          <Zap className="w-5 h-5" />
           <span>Elektromos megoldások szárazon és vizen</span>
         </div>
         
