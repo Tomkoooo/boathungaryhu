@@ -1,8 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Battery, Zap, Anchor, ArrowLeftRight, Maximize2, Scale, Users, Bed } from "lucide-react";
-import Image from "next/image";
+import { Battery, Zap, Anchor, ArrowLeftRight, Maximize2, Scale, Users, Bed } from "lucide-react";
 import Link from "next/link";
 import {
   Carousel,

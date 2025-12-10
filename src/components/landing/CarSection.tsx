@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Gauge, Timer, Zap, Activity, Users, Package, Disc, Tablet } from "lucide-react";
 import Link from "next/link";
 import {
@@ -60,12 +59,12 @@ export function CarSection() {
               </div>
               <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
                 <Disc className="w-6 h-6 mb-2 text-red-500" />
-                <p className="text-xl font-bold text-white">21"</p>
+                <p className="text-xl font-bold text-white">21&quot;</p>
                 <p className="text-xs text-slate-500">Überturbine</p>
               </div>
               <div className="text-center p-4 rounded-xl bg-slate-950/50 border border-slate-800 flex flex-col items-center justify-center">
                 <Tablet className="w-6 h-6 mb-2 text-red-500" />
-                <p className="text-xl font-bold text-white">15"</p>
+                <p className="text-xl font-bold text-white">15&quot;</p>
                 <p className="text-xs text-slate-500">Érintőkijelző</p>
               </div>
             </div>
